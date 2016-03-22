@@ -28,7 +28,7 @@ public class characterMove : MonoBehaviour {
 		charTransform.position = new Vector2 (hFactor + charTransform.position.x, charTransform.position.y);
 
 		//Vertical Movement
-		if (Input.GetKeyDown (KeyCode.Space) && onGround == true && jumps == 0) { //Checks for Space key and limits number of jumps
+		if (Input.GetKeyDown (KeyCode.Space) && jumps == 0) { //Checks for Space key and limits number of jumps
 			jumps++;
 			vVelocity = jumpVal;
 		} else if (Input.GetKeyDown (KeyCode.Space) && jumps == 1) {
@@ -58,6 +58,7 @@ public class characterMove : MonoBehaviour {
 		if(col.CompareTag("Ground")){
 			Debug.Log ("Left Ground");
 			onGround = false;
+			jumps = 1;
 		}
 
 	}
